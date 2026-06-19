@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>View Image</title>
+  <link rel="stylesheet" href="D:\Saran\Saran_Portfolio\CSS/styles.css">
+  <style>
+    body {
+      margin: 0;
+      background-color: #000000;
+      font-family: 'montserrat', bold;
+      color: #fff;
+    }
+
+header {
+  background-color: #222;
+  color: white;
+  padding: 12px 60px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.nav-links a:hover {
+  color: #00c3ff;
+}
+    
+  </style>
+</head>
+<body>
+
+
+<header>
+  <div class="header-container">
+    <div class="logo">
+      <a href="index.html">Saran S</a>
+    </div>
+    <nav class="nav-links">
+      
+      <a href="#about">About</a>
+      <a href="#career">My Career</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="back-button-container">
+  <a href="index.html" class="back-button">← Back</a>
+</div>
+
+
+
+<div class="container">
+  <img id="display-img" class="main-image" src="" alt="Viewing Portfolio Image" />
+
+<div class="gallery">
+  <img src="img/1_Icon.png" onclick="changeImage('img/1_Icon.png')" alt="Thumb 1" />
+  <img src="img/Cover.jpg" onclick="changeImage('img/2_Icon.png')" alt="Thumb 2" />
+  <img src="E:\Saran_New\Try\img\UI Design\shows page.jpg" onclick="changeImage('E:\Saran_New\Try\img\UI Design\shows page.jpg')" alt="Thumb 3" />
+  <img src="img/1_Icon.png" onclick="changeImage('img/1_Icon.png')" alt="Thumb 4" />
+  <img src="img/1_Icon.png" onclick="changeImage('img/1_Icon.png')" alt="Thumb 5" />
+</div>
+
+
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const imgSrc = urlParams.get('img');
+
+  function changeImage(src) {
+    document.getElementById('display-img').src = src;
+  }
+
+  if (imgSrc) {
+    changeImage(imgSrc);
+  } else {
+    document.getElementById('display-img').src = 'img/1_Icon.png'; // Default
+  }
+</script>
+
+</body>
+</html>

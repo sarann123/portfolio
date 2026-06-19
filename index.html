@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saran S Portfolio</title>
+  <link rel="stylesheet" href="D:\Saran\Saran_Portfolio\CSS/styles.css">
+
+  <!-- tsParticles CDN for animated particles background -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
+
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      background-color: #000000;
+      color: #ffffff;
+      transition: background-color 0.3s;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Particle canvas styling */
+#tsparticles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+
+header {
+  background-color: #222;
+  color: white;
+  padding: 12px 60px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.nav-links a:hover {
+  color: #00c3ff;
+}
+
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    
+
+    #lightbox {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+    }
+
+    #lightbox img {
+      max-width: 80%;
+      max-height: 80%;
+      border-radius: 10px;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+    }
+
+    #lightbox button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 3rem;
+      cursor: pointer;
+      padding: 20px;
+      user-select: none;
+    }
+
+    #lightbox button:hover {
+      color: #f39c12;
+    }
+  </style>
+</head>
+<body>
+  
+
+<!-- Particle Background Canvas -->
+<div id="tsparticles"></div>
+
+<header>
+  <div class="header-container">
+    <div class="logo">
+      <a href="index.html">Saran S</a>
+    </div>
+    <nav class="nav-links">
+      
+      <a href="#about">About</a>
+      <a href="#career">My Career</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+
+<section id="about" class="angled-section">
+<!-- <div class="video-container">
+  <video autoplay muted loop playsinline>
+    <source src="videos/profile.mp4" type="video/mp4">
+  </video>
+</div> -->
+
+  <div class="about-wrapper">
+    <div class="about-left">
+      <h2>Saran S</h2>
+      <p>
+        I'm <span class="font-width">Saran S</span>, a Graphic Designer and Animator with <span class="font-width">4 years of experience</span> in branding, motion graphics, and visual storytelling.
+      </p>
+      <p>
+        I bring creativity and clarity to digital content, ensuring every design leaves a lasting impression.
+      </p>
+    </div>
+
+    <div class="about-right">
+      <video autoplay muted loop playsinline width="100%">
+        <source src="D:\Saran\Saran_Portfolio\Videos\Intro_Portfolio.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</section>
+
+
+<section id="career" class="career-section">
+  <h2 class="section-title">My Career & Experience</h2>
+  <div class="career-container">
+    <!-- Left Block -->
+    <div class="career-box">
+      <h3>2021 - 2024</h3>
+      <p class="role">Graphic Designer & Animator</p>
+      <p class="company">Log2base2 / Mothertong</p>
+      <p class="company-data"><strong>Log2Base2 is a brilliant platform to visually learn</strong> - programming - data structures - algorithms. Amazing, simple to understand animations they have created.</p>
+
+      <ul class="company-data-skill">
+        <li>UX design, Social Media Poster design & </li>
+        <li>Google Ads Banners, marketing video projects</li>
+        <li>250+ motion graphics, logo, explainer videos</li>
+        <li>Boosted client retention by 35%</li>
+        <li>Collaborated with devs, marketers for consistency</li>
+      </ul>
+      <div class="award">
+        <strong>🏅 best performer award:</strong> Crative Animation For Advance data Structure Videos
+      </div>
+    </div>
+
+    <!-- Right Block -->
+    <div class="career-box">
+      <h3>2024 - 2026 <span class="present">(Present)</span></h3>
+      <p class="role"> Graphics designer | UI & UX Designer</p>
+      <p class="company">ChuChu TV </p>
+      <p class="company-data"><strong>ChuChu TV is a popular YouTube channel</strong> and network of channels known for its educational and entertaining content for young children, particularly nursery rhymes and kids' songs.</p>
+      <ul class="company-data-skill">
+        <li>Creative click throw Thumbnails</li>
+        <li>Website & Mobile App UI Design</li>
+        <li>Social Media Posters & Banners</li>
+        <li>Led branding & animation, managed website</li>
+        <li>Boosted growth via strategy & high-impact content</li>
+      </ul>
+      <div class="award">
+        <strong>🔥 Trailblazer Award:</strong> Pitch decks & animation<br>
+        <strong>⭐ Key Contributor Award:</strong> High-value creative assets.
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="portfolio">
+  <h2>Portfolio</h2>
+  <div class="portfolio-grid">
+    <div class="portfolio-card">
+      <a href="viewer.html?img=img/Graphics-design_Banners.jpg">
+        <img src="img/Graphics-design_Banners.jpg" alt="Graphic Design" />
+        <div class="card-caption">Graphic Design</div>
+      </a>
+    </div>
+
+    <div class="portfolio-card">
+      <a href="viewer.html?img=img/2D-Animations_Banners.jpg">
+        <img src="img/2D-Animations_Banners.jpg" alt="Motion Graphic Animation" />
+        <div class="card-caption">Motion Graphic Animation</div>
+      </a>
+    </div>
+
+    <div class="portfolio-card">
+      <a href="viewer.html?img=img/Cover.jpg">
+        <img src="img/Cover.jpg" alt="UI & UX Design" />
+        <div class="card-caption">UI & UX Design</div>
+      </a>
+    </div>
+
+    <!-- 🔽 NEW 3 ITEMS BELOW 🔽 -->
+
+    <div class="portfolio-card">
+      <a href="viewer.html?img=img/1_Icon.png">
+        <img src="img/1_Icon.png" alt="Illustration" />
+        <div class="card-caption">Illustration</div>
+      </a>
+    </div>
+
+    <div class="portfolio-card">
+      <a href="viewer.html?img=img/Banner_1.jpg">
+        <img src="img/Banner_1.jpg" alt="3D Design" />
+        <div class="card-caption">3D Design</div>
+      </a>
+    </div>
+
+    <div class="portfolio-card">
+      <a href="viewer.html?img=img/3_Icon.png">
+        <img src="img/3_Icon.png" alt="Branding Projects" />
+        <div class="card-caption">Branding Projects</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="card">
+    <p>Email: maddysaran123@gmail.com</p>
+    <p>Instagram: @yourhandle</p>
+    <p>LinkedIn: linkedin.com/in/yourname</p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Saran S. All rights reserved.</p>
+</footer>
+
+<!-- Lightbox Modal -->
+<div id="lightbox" onclick="closeLightbox(event)">
+  <button id="prevBtn" onclick="prevImage(event)">❮</button>
+  <img id="lightbox-img" src="" alt="Expanded view" />
+  <button id="nextBtn" onclick="nextImage(event)">❯</button>
+</div>
+
+<script>
+  const images = [
+    "E:\\Saran_New\\Try\\img\\1_Icon.png",
+    "E:\\Saran_New\\Try\\img\\2_Icon.png",
+    "E:\\Saran_New\\Try\\img\\3_Icon.png",
+  ];
+  let currentIndex = 0;
+
+  function openLightbox(index) {
+    currentIndex = index;
+    document.getElementById('lightbox-img').src = images[currentIndex];
+    document.getElementById('lightbox').style.display = 'flex';
+  }
+
+  function closeLightbox(e) {
+    if (e.target.id === 'lightbox' || e.target.id === 'lightbox-img') {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+  }
+
+  function prevImage(e) {
+    e.stopPropagation();
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    document.getElementById('lightbox-img').src = images[currentIndex];
+  }
+
+  function nextImage(e) {
+    e.stopPropagation();
+    currentIndex = (currentIndex + 1) % images.length;
+    document.getElementById('lightbox-img').src = images[currentIndex];
+  }
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+  });
+
+  // Initialize particles
+  tsParticles.load("tsparticles", {
+    fullScreen: { enable: false },
+    background: {
+      color: { value: "#f5f5f5" }
+    },
+    particles: {
+      number: { value: 50 },
+      color: { value: "#999999" },
+      shape: { type: "circle" },
+      opacity: { value: 0.5 },
+      size: { value: { min: 1, max: 5 } },
+      move: {
+        enable: true,
+        speed: 1,
+        direction: "none",
+        outModes: "out"
+      },
+      links: {
+        enable: true,
+        distance: 120,
+        color: "#cccccc",
+        opacity: 0.3
+      }
+    },
+    interactivity: {
+      events: {
+        onHover: { enable: true, mode: "repulse" },
+        resize: true
+      }
+    }
+  });
+</script>
+
+</body>
+</html>

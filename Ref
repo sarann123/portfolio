@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saran S Portfolio</title>
+   <link rel="stylesheet" href="E:\Saran_New\Try\CSS/styles.css">
+  <style>
+    body {
+      font-family: 'montserrat', bold;
+      margin: 0;
+      background-color: #f5f5f5;
+      color: #333;
+      transition: background-color 0.3s;
+    }
+
+    header {
+      background-color: #222;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+       footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-box">
+    <h1>Saran S</h1>
+    <p>Graphics Designer and Animator</p>
+  </div>
+  <nav>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- ✅ About Section Comes First Now -->
+<section id="about">
+  <h2>About Me</h2>
+  <div class="card">
+    <p>
+      I'm Saran S, a Graphic Designer and Animator with 4 years of experience creating visual content that captivates and communicates effectively. My work spans branding, motion graphics, and digital design. I’m passionate about turning ideas into stunning visuals that leave a lasting impression.
+    </p>
+  </div>
+</section>
+
+<!-- ✅ Portfolio Section Comes After -->
+<section id="portfolio">
+  <h2>Portfolio</h2>
+  <div class="portfolio">
+    <div class="image-box">
+      <a href="viewer.html?img=img/1_Icon.png">
+        <img src="img/1_Icon.png" alt="Project 1" />
+      </a>
+      <div class="image-caption">Project 1</div>
+    </div>
+
+    <div class="image-box">
+      <a href="viewer.html?img=img/Cover.jpg">
+        <img src="img/Cover.jpg" alt="Project 2" />
+      </a>
+      <div class="image-caption">Project 2</div>
+    </div>
+
+    <div class="image-box">
+      <a href="viewer.html?img=img/1_Icon.png">
+        <img src="img/1_Icon.png" alt="Project 3" />
+      </a>
+      <div class="image-caption">Project 3</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="card">
+    <p>Email: yourname@example.com</p>
+    <p>Instagram: @yourhandle</p>
+    <p>LinkedIn: linkedin.com/in/yourname</p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Saran S. All rights reserved.</p>
+</footer>
+
+<!-- Lightbox Modal -->
+<div id="lightbox" onclick="closeLightbox(event)">
+  <button id="prevBtn" onclick="prevImage(event)">❮</button>
+  <img id="lightbox-img" src="" alt="Expanded view" />
+  <button id="nextBtn" onclick="nextImage(event)">❯</button>
+</div>
+
+<script>
+  const images = [
+    "E:\\Saran_New\\Try\\img\\1_Icon.png",
+    "E:\\Saran_New\\Try\\img\\2_Icon.png",
+    "E:\\Saran_New\\Try\\img\\3_Icon.png",
+  ];
+  let currentIndex = 0;
+
+  function openLightbox(index) {
+    currentIndex = index;
+    document.getElementById('lightbox-img').src = images[currentIndex];
+    document.getElementById('lightbox').style.display = 'flex';
+  }
+
+  function closeLightbox(e) {
+    if (e.target.id === 'lightbox' || e.target.id === 'lightbox-img') {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+  }
+
+  function prevImage(e) {
+    e.stopPropagation();
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    document.getElementById('lightbox-img').src = images[currentIndex];
+  }
+
+  function nextImage(e) {
+    e.stopPropagation();
+    currentIndex = (currentIndex + 1) % images.length;
+    document.getElementById('lightbox-img').src = images[currentIndex];
+  }
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+  });
+</script>
+
+</body>
+</html>
+  
