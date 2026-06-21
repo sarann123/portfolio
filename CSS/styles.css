@@ -551,8 +551,8 @@ main, header, section, footer {
 
 .close{
     position:absolute;
-    top:20px;
-    right:30px;
+    top: 50px;
+    right: 35px;
     color:white;
     font-size:40px;
     cursor:pointer;
