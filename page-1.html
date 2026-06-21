@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Gallery</title>
+<link rel="stylesheet" href="./CSS/styles.css">
+
+<style>
+body{
+      margin: 0;
+      background-color: #000000;
+      font-family: 'montserrat', bold;
+      color: #fff;
+}
+
+h1{
+    text-align:center;
+    padding:20px;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    padding:30px;
+}
+
+.gallery img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+.lightbox{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.95);
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.lightbox img{
+    max-width:85%;
+    max-height:85%;
+    border-radius:10px;
+}
+
+.close{
+    position:absolute;
+    top:20px;
+    right:30px;
+    font-size:40px;
+    cursor:pointer;
+}
+
+.prev,
+.next{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:50px;
+    cursor:pointer;
+    padding:10px;
+}
+
+.prev{
+    left:20px;
+}
+
+.next{
+    right:20px;
+}
+header {
+  background-color: #222;
+  color: white;
+  padding: 12px 60px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.nav-links a:hover {
+  color: #00c3ff;
+}
+    
+</style>
+</head>
+
+<body>
+    <header>
+  <div class="header-container">
+    <div class="logo">
+      <a href="index.html">Saran S</a>
+    </div>
+    <nav class="nav-links">
+      
+      <a href="#about">About</a>
+      <a href="#career">My Career</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<h1>Graphic Design</h1>
+
+<div class="gallery">
+    <img src="D:\Saran\Saran_Portfolio\img\Graphics Design/graph-1.avif" onclick="openImage(0)">
+    <img src="D:\Saran\Saran_Portfolio\img\Graphics Design/graph-2.avif" onclick="openImage(1)">
+    <img src="D:\Saran\Saran_Portfolio\img\Graphics Design/graph-3.avif" onclick="openImage(2)">
+    <img src="D:\Saran\Saran_Portfolio\img\Graphics Design/graph-4.avif" onclick="openImage(3)">
+    <img src="D:\Saran\Saran_Portfolio\img\Graphics Design/graph-5.avif" onclick="openImage(4)">
+    <img src="D:\Saran\Saran_Portfolio\img\Graphics Design/graph-6.avif" onclick="openImage(5)">
+</div>
+
+<div class="lightbox" id="lightbox">
+
+    <span class="close" onclick="closeImage()">&times;</span>
+
+    <span class="prev" onclick="prevImage()">❮</span>
+
+    <img id="lightbox-img">
+
+    <span class="next" onclick="nextImage()">❯</span>
+
+</div>
+
+<script>
+
+const images = [
+    "D:\Saran\Saran_Portfolio\img\Graphics Design/graph-1.avif",
+    "D:\Saran\Saran_Portfolio\img\Graphics Design/graph-2.avifg",
+    "D:\Saran\Saran_Portfolio\img\Graphics Design/graph-3.avif",
+    "D:\Saran\Saran_Portfolio\img\Graphics Design/graph-4.avif",
+    "D:\Saran\Saran_Portfolio\img\Graphics Design/graph-5.avif",
+    "D:\Saran\Saran_Portfolio\img\Graphics Design/graph-6.avif"
+];
+
+let currentIndex = 0;
+
+function openImage(index){
+    currentIndex = index;
+    document.getElementById("lightbox").style.display="flex";
+    document.getElementById("lightbox-img").src=images[index];
+}
+
+function closeImage(){
+    document.getElementById("lightbox").style.display="none";
+}
+
+function nextImage(){
+    currentIndex++;
+    if(currentIndex >= images.length){
+        currentIndex = 0;
+    }
+    document.getElementById("lightbox-img").src=images[currentIndex];
+}
+
+function prevImage(){
+    currentIndex--;
+    if(currentIndex < 0){
+        currentIndex = images.length - 1;
+    }
+    document.getElementById("lightbox-img").src=images[currentIndex];
+}
+
+document.addEventListener("keydown",function(e){
+
+    if(e.key==="ArrowRight"){
+        nextImage();
+    }
+
+    if(e.key==="ArrowLeft"){
+        prevImage();
+    }
+
+    if(e.key==="Escape"){
+        closeImage();
+    }
+
+});
+
+</script>
+
+</body>
+</html>
