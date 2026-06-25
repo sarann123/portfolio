@@ -385,15 +385,14 @@ header {
 
 .about-right {
   flex: 1;
-  text-align: center;
   min-width: 250px;
 }
 
-.about-right img {
-  max-width: 100%;
+.about-right video {
+  width: 100%;
   height: auto;
   border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  display: block;
 }
 
 body {
@@ -789,4 +788,16 @@ a:hover {
     color:white;
 }
 
+/* Animation */
+
+.animate-section {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 0.8s ease;
+}
+
+.animate-section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
 

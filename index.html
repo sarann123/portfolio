@@ -20,6 +20,7 @@
       transition: background-color 0.3s;
       position: relative;
       z-index: 1;
+          padding-top: 80px;
     }
 
     /* Particle canvas styling */
@@ -32,32 +33,26 @@
   z-index: 0;
 }
 
-
-/* header {
-  background-color: #222;
-  color: white;
-  padding: 12px 60px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-} */
  header {
-  background: #222;
-  padding: 12px 60px;
-}
-/* .nav-links a:hover {
-  color: #00c3ff;
-} */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
 
-    footer {
+    background: #222;
+    padding: 12px 60px;
+    z-index: 1000;
+
+}
+
+    /* footer {
       background-color: #222;
       color: white;
       text-align: center;
       padding: 20px;
       margin-top: 40px;
-    }
-
-    
+    } */
+   
 
     #lightbox {
       display: none;
@@ -92,6 +87,32 @@
     #lightbox button:hover {
       color: #f39c12;
     }
+
+    /* Animation */
+    /* About */
+#about {
+    transform: translateX(-80px);
+}
+
+/* Career */
+#career {
+    transform: translateY(80px);
+}
+
+/* Portfolio */
+#portfolio {
+    transform: translateX(80px);
+}
+
+/* Contact */
+#contact {
+    transform: scale(0.9);
+}
+
+.show {
+    opacity: 1 !important;
+    transform: translate(0,0) scale(1) !important;
+}
   </style>
 </head>
 <body>
@@ -116,12 +137,7 @@
 </header>
 
 
-<section id="about" class="angled-section">
-<!-- <div class="video-container">
-  <video autoplay muted loop playsinline>
-    <source src="videos/profile.mp4" type="video/mp4">
-  </video>
-</div> -->
+<section id="about" class="angled-section animate-section">
 
   <div class="about-wrapper">
     <div class="about-left">
@@ -134,17 +150,16 @@
       </p>
     </div>
 
-    <div class="about-right">
-      <video autoplay muted loop playsinline width="100%">
-        <source src="\Videos\Intro_Portfolio.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-  </div>
+<div class="about-right">
+  <video autoplay muted loop playsinline width="100%">
+    <source src="Videos/Intro_Portfolio.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
 </section>
 
 
-<section id="career" class="career-section">
+<section id="career" class="career-section animate-section">
   <h2 class="section-title">My Career & Experience</h2>
   <div class="career-container">
     <!-- Left Block -->
@@ -188,7 +203,7 @@
 </section>
 
 
-<section id="portfolio">
+<section id="portfolio" class="animate-section">
   <h2>Portfolio</h2>
   <div class="portfolio-grid">
     <div class="portfolio-card">
@@ -238,7 +253,7 @@
 </section>
 
 
-<section id="contact" class="contact-section">
+<section id="contact" class="contact-section animate-section">
 
     <h2>CONTACT</h2>
 
@@ -349,6 +364,24 @@
       }
     }
   });
+
+
+const sections = document.querySelectorAll('.animate-section');
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
+}, {
+    threshold: 0.2
+});
+
+sections.forEach(section => {
+    observer.observe(section);
+});
+
 </script>
 
 </body>

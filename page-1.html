@@ -65,12 +65,14 @@ h1{
   </div>
 </header>
 
+<div class="animate-section">
 <h1>Graphic Design</h1>
 <p class="page-description">
   A collection of my graphic design works including UI designs, illustrations, social media creatives, and visual concepts.
 </p>
+</div>
 
-<div class="gallery">
+<div class="gallery animate-section">
     <img src="img/graph-1.jpg" onclick="openImage(0)">
     <img src="img/graph-2.jpg" onclick="openImage(1)">
     <img src="img/graph-3.jpg" onclick="openImage(2)">
@@ -148,6 +150,22 @@ document.addEventListener("keydown",function(e){
         closeImage();
     }
 
+});
+
+const sections = document.querySelectorAll('.animate-section');
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
+}, {
+    threshold: 0.2
+});
+
+sections.forEach(section => {
+    observer.observe(section);
 });
 
 </script>
